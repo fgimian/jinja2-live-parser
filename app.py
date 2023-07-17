@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import ansible.plugins.filter.core
 import ansible.plugins.filter.encryption
 import ansible.plugins.filter.mathstuff
@@ -54,7 +53,3 @@ def render_template():
         return jinja_template.render(**values)
     except Exception as e:
         return "Error: template rendering failed.\n{}".format(e)
-
-
-if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0")

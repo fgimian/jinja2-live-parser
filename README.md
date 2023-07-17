@@ -28,7 +28,7 @@ Install [Python](https://www.python.org/) and [Poetry](https://python-poetry.org
 poetry install
 
 # Run the application.
-poetry run python3 app.py
+poetry run flask run -h 0.0.0.0
 ```
 
 ## Original Motivation
