@@ -1,26 +1,28 @@
-body {
-    background: #333;
-    color: #ccc;
+:root {
+  --bs-heading-color: #ccc;
+  --bs-body-color: #ccc;
+  --bs-body-bg: #2c2c2c;
+  --bs-secondary-color: #5555ff;
 }
 
 #template,
 #render,
 #values {
-    color: #eee;
-    width: 100%;
-    min-height: 300px;
-    resize: vertical;
-    font-family: 'Cascadia Code', Consolas, "Courier New", Courier, monospace;
-    border: 0;
-    border-radius: 10px;
-    padding: 10px 20px;
+  color: #eee;
+  width: 100%;
+  min-height: 300px;
+  resize: vertical;
+  font-family: 'Cascadia Code', Consolas, "Courier New", Courier, monospace;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
 }
 
 #template,
 #values {
-    background: #444;
+  background: #393939;
 }
 
 #render {
-    background: #555;
+  background: #494949;
 }
