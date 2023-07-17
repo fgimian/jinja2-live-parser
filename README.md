@@ -1,4 +1,4 @@
-# Jinja2 Live Parser (with Ansible Support)
+# Jinja2 Live Parser (with Ansible filter support)
 
 Live parser for Jinja is a little web application that renders a Jinja2 template using the values specified in YAML format. The result is updated dynamically as you type.
 

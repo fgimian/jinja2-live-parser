@@ -1,9 +1,9 @@
 $(document).ready(function(){
     function render_template() {
-        var useAnsibleFilters = $('input[name="use-ansible-filters"]').is(':checked') ? 1:0;
-        var trimBlocks = $('input[name="trim-blocks"]').is(':checked') ? 1:0;
-        var lstripBlocks = $('input[name="lstrip-blocks"]').is(':checked') ? 1:0;
-        var showWhitespace = $('input[name="show-whitespace"]').is(':checked') ? 1:0;
+        var useAnsibleFilters = $('input[id="use-ansible-filters"]').is(':checked') ? 1:0;
+        var trimBlocks = $('input[id="trim-blocks"]').is(':checked') ? 1:0;
+        var lstripBlocks = $('input[id="lstrip-blocks"]').is(':checked') ? 1:0;
+        var showWhitespace = $('input[id="show-whitespace"]').is(':checked') ? 1:0;
         $.post('/render', {
             template: $('#template').val(),
             values: $('#values').val(),
