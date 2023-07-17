@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+    </script>
+    <script src="/static/convert.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Jinja2 live parser</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand">Jinja2 Live Parser</a>
+    </nav>
+    <form class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Jinja2 Template</h2>
+                <textarea id="template"></textarea>
+            </div>
+            <div class="col-md-6">
+                <h2>Render</h2>
+                <textarea id="render" disabled></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Values (YAML)</h2>
+                <textarea id="values"></textarea>
+            </div>
+            <div class="col-md-6">
+                <h2>Settings</h2>
+                <div id="settings">
+                    <label>
+                        <input type="checkbox" name="use-ansible-filters" id="use-ansible-filters" checked="checked" />
+                        use Ansible filters
+                    </label>
+                    <br />
+                    <label>
+                        <input type="checkbox" name="trim-blocks" id="trim-blocks" checked="checked" />
+                        trim_blocks
+                    </label>
+                    <br />
+                    <label>
+                        <input type="checkbox" name="lstrip-blocks" id="lstrip-blocks" />
+                        lstrip_blocks
+                    </label>
+                    <br />
+                    <label>
+                        <input type="checkbox" name="show-whitespace" id="show-whitespace" />
+                        show whitespace
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

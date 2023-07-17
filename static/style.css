@@ -1,0 +1,30 @@
+body {
+    background: #333;
+    color: #ccc;
+}
+
+#template,
+#render,
+#values {
+    color: #eee;
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    font-family: 'Cascadia Code', Consolas, "Courier New", Courier, monospace;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#template,
+#values {
+    background: #444;
+}
+
+#render {
+    background: #555;
+}
+
+span.whitespace {
+    color: #ccc;
+}

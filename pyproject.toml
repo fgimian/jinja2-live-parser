@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "jinja-live-parser"
+version = "0.1.0"
+description = "A web application which fills a template with values specified in YAML format."
+authors = ["Matjaž Žganec <matjaz@genialis.com>", "Fotis Gimian <fgimiansoftware@gmail.com>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.3.2"
+pyyaml = "^6.0"
+ansible = "^8.1.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+flake8-pyproject = "^1.2.3"
+
+[tool.flake8]
+max-line-length = 100
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100
+lines_after_imports = 2
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

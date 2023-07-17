@@ -1,30 +1,27 @@
-# Live parser for Jinja
+# Jinja2 Live Parser (with Ansible Support)
 
-Live parser for Jinja is a web application which fills a template with values specified in YAML format. The resulting rendering is updated dynamically as the user types. A running demo is available at [http://jinja.quantprogramming.com/](http://jinja.quantprogramming.com/).
+Live parser for Jinja is a web application which fills a template with values specified in YAML format. The resulting rendering is updated dynamically as the user types.
+
+This version is updated with the following changes:
+
+- Dark theme
+- Ability to enable all Ansible Jinja2 filters
+- Ability to toggle `trim_blocks` and `lstrip_blocks`
+- Simplification of solution so you can run the entire app with Flask
 
 For more information about Jinja visit the official website at [http://jinja.pocoo.org/](http://jinja.pocoo.org/).
 
 ## Installation
 
-Run `docker-compose up` from the root directory of the project.
+Install [Poetry](https://python-poetry.org/) and run the following:
 
-Open [http://localhost/](http://localhost/) in your web browser and you're ready to roll.
+```bash
+# Install dependencies.
+poetry install
 
-## Implementation details
-
-Live parser for Jinja is comprised of two custom Docker containers: 
-* Flask microservice in the app directory and
-* nginx server in the web directory.
-
-The Flask microservice serves GET and POST requests on port 5000. Two parameters are expected in each request:
-* `template` a template and
-* `values` a set of key-value pairs specified in YAML format.
-
-The nginx server acts as a reverse proxy for the Flask microservice and serves static HTML, JavaScript, and CSS files.
-
-Dynamic update is implemented as a keystroke listener on `template` and `values` inputs. A single request is sent to the server by each key press.
-
-This implementation is inspired by [https://github.com/qn7o/jinja2-live-parser](https://github.com/qn7o/jinja2-live-parser).
+# Run the application.
+python3 app.py
+```
 
 ## Motivation
 
