@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "jinja-live-parser"
+name = "jinja2-live-parser"
 version = "0.1.0"
 description = "A web application which fills a template with values specified in YAML format."
 authors = ["Matjaž Žganec <matjaz@genialis.com>", "Fotis Gimian <fgimiansoftware@gmail.com>"]
