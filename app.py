@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from flask import Flask, request, current_app
-import jinja2
 import ansible.plugins.filter.core
 import ansible.plugins.filter.encryption
 import ansible.plugins.filter.mathstuff
 import ansible.plugins.filter.urls
 import ansible.plugins.filter.urlsplit
+import jinja2
 import yaml
+from flask import Flask, current_app, request
 
 
 app = Flask(__name__)
