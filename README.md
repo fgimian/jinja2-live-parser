@@ -15,9 +15,7 @@ Here's a screenshot of the app in action:
 
 ![Jnija2 Live Parser Screenshot](https://raw.githubusercontent.com/fgimian/jinja2-live-parser/master/images/screenshot.png)
 
-For more information about Jinja, visit the official website at [http://jinja.pocoo.org/](http://jinja.pocoo.org/).
-
-For more information about Ansible, visit the official website at [https://www.ansible.com/](https://www.ansible.com/).
+See the official [Jinja website](http://jinja.pocoo.org/) and [Ansible website](https://www.ansible.com/) to learn more about the respective tools.
 
 **Note**: This application will only run on Linux due to the use of Ansible which is not supported on other operating systems.
 
