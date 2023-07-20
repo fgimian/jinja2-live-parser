@@ -5,19 +5,18 @@ import ansible.plugins.filter.urls
 import ansible.plugins.filter.urlsplit
 import jinja2
 import yaml
-from flask import Flask, current_app, request
-
+from flask import Flask, Response, current_app, request
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def home():
+def home() -> Response:
     return current_app.send_static_file("index.html")
 
 
 @app.post("/render")
-def render_template():
+def render_template() -> Response:
     template = request.values.get("template", "")
     values = request.values.get("values", "")
     use_ansible_filters = bool(request.values.get("use_ansible_filters", 1, type=int))
@@ -26,11 +25,12 @@ def render_template():
 
     try:
         values = yaml.safe_load(values)
-    except Exception as e:
-        return "Error: values need to be in YAML format.\n{}".format(e)
+    except yaml.YAMLError as e:
+        return f"Error: values need to be in YAML format.\n{e}"
     values = values or {}
 
     environment = jinja2.Environment(
+        autoescape=True,
         trim_blocks=trim_blocks,
         lstrip_blocks=lstrip_blocks,
         extensions=[
@@ -55,10 +55,7 @@ def render_template():
 
     try:
         jinja_template = environment.from_string(template)
-    except Exception as e:
-        return "Error: unable to construct template.\n{}".format(e)
+    except jinja2.exceptions.TemplateSyntaxError as e:
+        return f"Error: unable to construct template.\n{e}"
 
-    try:
-        return jinja_template.render(**values)
-    except Exception as e:
-        return "Error: template rendering failed.\n{}".format(e)
+    return jinja_template.render(**values)

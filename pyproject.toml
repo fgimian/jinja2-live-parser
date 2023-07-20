@@ -14,11 +14,14 @@ ansible = "^8.1.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
-isort = "^5.12.0"
-flake8-pyproject = "^1.2.3"
+ruff = "^0.0.278"
+mypy = "^1.4.1"
+types-pyyaml = "^6.0.12.10"
 
-[tool.flake8]
-max-line-length = 100
+[tool.ruff]
+select = ["ALL"]
+ignore = ["D"]
+line-length = 100
 
 [tool.black]
 line-length = 100
@@ -27,6 +30,13 @@ line-length = 100
 profile = "black"
 line_length = 100
 lines_after_imports = 2
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "ansible.*"
+ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core"]
