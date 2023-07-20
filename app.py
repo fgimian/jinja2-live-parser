@@ -30,7 +30,16 @@ def render_template():
         return "Error: values need to be in YAML format.\n{}".format(e)
     values = values or {}
 
-    environment = jinja2.Environment(trim_blocks=trim_blocks, lstrip_blocks=lstrip_blocks)
+    environment = jinja2.Environment(
+        trim_blocks=trim_blocks,
+        lstrip_blocks=lstrip_blocks,
+        extensions=[
+            "jinja2.ext.i18n",
+            "jinja2.ext.do",
+            "jinja2.ext.loopcontrols",
+            "jinja2.ext.debug",
+        ],
+    )
     if use_ansible_filters:
         core_filters = ansible.plugins.filter.core.FilterModule()
         encryption_filters = ansible.plugins.filter.encryption.FilterModule()
