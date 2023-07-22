@@ -58,4 +58,7 @@ def render_template() -> Response:
     except jinja2.exceptions.TemplateSyntaxError as e:
         return f"Error: unable to construct template.\n{e}"
 
+    if not isinstance(values, dict):
+        return "Error: provided values must be a mapping."
+
     return jinja_template.render(**values)
